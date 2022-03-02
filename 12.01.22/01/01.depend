@@ -1,0 +1,13 @@
+# depslib dependency file v1.0
+1618339688 source:c:\users\renat\videos\ensino remoto ufu\ensino remoto 2021\2021.1\aed1\controle de presen«a\14.04\01\funcao.c
+	<stdlib.h>
+	<stdio.h>
+	"tad.h"
+
+1618339688 c:\users\renat\videos\ensino remoto ufu\ensino remoto 2021\2021.1\aed1\controle de presen«a\14.04\01\tad.h
+
+1618339386 source:c:\users\renat\videos\ensino remoto ufu\ensino remoto 2021\2021.1\aed1\controle de presen«a\14.04\01\main.c
+	<stdio.h>
+	<stdlib.h>
+	"tad.h"
+

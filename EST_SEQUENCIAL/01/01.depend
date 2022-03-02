@@ -1,0 +1,15 @@
+# depslib dependency file v1.0
+1617584681 source:c:\users\renat\videos\ensino remoto ufu\ensino remoto 2021\2021.1\aed1\avaliativas\07.04\01\function.c
+	<stdlib.h>
+	<stdio.h>
+	<string.h>
+	"tad.h"
+
+1617584681 c:\users\renat\videos\ensino remoto ufu\ensino remoto 2021\2021.1\aed1\avaliativas\07.04\01\tad.h
+
+1617584681 source:c:\users\renat\videos\ensino remoto ufu\ensino remoto 2021\2021.1\aed1\avaliativas\07.04\01\main.c
+	<stdlib.h>
+	<stdio.h>
+	<string.h>
+	"tad.h"
+

@@ -1,0 +1,14 @@
+# depslib dependency file v1.0
+1641430163 source:c:\users\renat\videos\ensino remoto ufu\2022\2022-1\aed1\avaliativas\10.01.22\02\main.c
+	"02.h"
+	<stdlib.h>
+	<math.h>
+
+1641430389 c:\users\renat\videos\ensino remoto ufu\2022\2022-1\aed1\avaliativas\10.01.22\02\02.h
+
+1641430415 source:c:\users\renat\videos\ensino remoto ufu\2022\2022-1\aed1\avaliativas\10.01.22\02\projeto.c
+	<stdio.h>
+	<stdlib.h>
+	<math.h>
+	"02.h"
+
