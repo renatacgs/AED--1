@@ -1,0 +1,6 @@
+# depslib dependency file v1.0
+1639528159 source:c:\users\renat\videos\ensino remoto ufu\2022\2022-1\aed1\avaliativas\ponteiros_alocdinamica\01\01\main.c
+	<stdio.h>
+	<stdlib.h>
+	<string.h>
+

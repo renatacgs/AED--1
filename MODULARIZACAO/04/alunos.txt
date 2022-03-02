@@ -1,0 +1,15 @@
+Aluno: renata 
+Matricula: 11721
+Nota final: 0
+
+Nota final: 95.00
+Aluno: carla 
+Matricula: 11821
+Nota final: 0
+
+Nota final: 65.00
+Aluno: felipe 
+Matricula: 11711
+Nota final: 0
+
+Nota final: 87.00

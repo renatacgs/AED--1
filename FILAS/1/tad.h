@@ -1,0 +1,10 @@
+typedef struct fila Fila;
+Fila * cria_fila(void);
+int tamanho_fila(Fila *fi);
+int fila_cheia(Fila *fi);
+int fila_vazia(Fila *fi);
+int insere_fila(Fila *fi,char dados[]);
+int remove_fila(Fila *fi);
+int consulta_fila(Fila *fi, char *dados[]);
+void libera_fila(Fila *fi);
+void imprime(Fila *fi);
