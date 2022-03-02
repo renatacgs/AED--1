@@ -1,0 +1,23 @@
+# depslib dependency file v1.0
+1643630457 source:c:\users\pc\desktop\facul\aed1\trabalho_questao4\main.c
+	<stdio.h>
+	<stdlib.h>
+	"Lista.h"
+
+1643499423 c:\users\pc\desktop\facul\aed1\trabalho_questao4\lista.h
+
+1643631445 source:c:\users\pc\desktop\facul\aed1\trabalho_questao4\lista.c
+	<stdlib.h>
+	"Lista.h"
+
+1644184053 source:c:\users\pc\desktop\facul\aed1\trabalho1_questao4\main.c
+	<stdio.h>
+	<stdlib.h>
+	"Lista.h"
+
+1643998658 c:\users\pc\desktop\facul\aed1\trabalho1_questao4\lista.h
+
+1644183704 source:c:\users\pc\desktop\facul\aed1\trabalho1_questao4\lista.c
+	<stdlib.h>
+	"Lista.h"
+

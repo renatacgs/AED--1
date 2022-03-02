@@ -1,0 +1,389 @@
+main.c
+
+#include <stdio.h>
+#include <stdlib.h>
+#include "03.h"
+
+void manipular_lista(Lista lst);
+void tratamento_escolha(Lista lst, int escolha);
+
+int main(){
+    Lista lst = cria_lista();
+    Lista lst2 = cria_lista();
+    Lista lst3 = cria_lista();
+
+    if(lst == NULL || lst2 == NULL || lst3 == NULL){
+        printf("\nFalha ao criar listas!\n");
+        return 1;
+    }
+
+    int escolha = 0;
+    int retorno = 0;
+    float valor = 0;
+    int sair = 0;
+    int i;
+
+    while(1){
+        printf("Escolha uma opcao.\n");
+        printf("[1]Manipular lista 1.\n");
+        printf("[2]Manipular lista 2.\n");
+        printf("[3]Verificar listas\n");
+        printf("[4]Intercalar listas.\n");
+        printf("[5]Sair.\n");
+        scanf("%d", &escolha);
+        switch(escolha){
+            case 1:
+                manipular_lista(lst);
+                break;
+
+            case 2:
+                manipular_lista(lst2);
+                break;
+
+            case 3:
+                retorno = iguais(lst,lst2);
+                if(retorno == 1)
+                    printf("\nListas iguais.\n\n");
+                else
+                    printf("\nListas diferentes.\n\n");
+                break;
+            case 4:
+                lst3 = intercala(lst,lst2);
+                if(lst3 == NULL){
+                    printf("Erro.\n");
+                    break;
+                }
+
+                printf("\nLista intercalada: ");
+                if(lista_vazia(lst3))
+                    printf("Lista vazia!\n\n");
+                else{
+                    for(i = 1; i<=tamanho(lst3); i++){
+                        obtem_elem(lst3,i, &valor);
+                        printf("%.2f ",valor);
+                    }
+                    printf("\n\n");
+                }
+                esvaziar(lst3);
+                break;
+            case 5:
+                sair = 1;
+                break;
+            default:
+                printf("\nOpcao invalida!\n");
+        }
+        if(sair == 1)
+            break;
+    }
+}
+
+void manipular_lista(Lista lst){
+    int escolha = 0;
+
+    while(1){
+        printf("\nEscolha uma opcao:\n");
+        printf("[1] Imprimir lista.\n");
+        printf("[2] Inserir elemento na lista.\n");
+        printf("[3] Remover elemento da lista.\n");
+        printf("[4] Tamanho da lista.\n");
+        printf("[5] Voltar.\n");
+        scanf("%d", &escolha);
+
+        if(escolha == 5)
+            break;
+        tratamento_escolha(lst, escolha);
+    }
+}
+
+void tratamento_escolha(Lista lst, int escolha){
+    int i = 0;
+    int retorno = 0;
+    float valor = 0;
+
+    switch(escolha){
+        case 1:
+            if(lista_vazia(lst) == 1){
+                printf("\nLista vazia.\n");
+                break;
+            }
+
+            printf("\nLista: ");
+
+            for(i = 1; i<=tamanho(lst); i++){
+                obtem_elem(lst,i,&valor);
+                printf("%.2f ",valor);
+            }
+
+            printf("\n\n");
+
+            break;
+        case 2:
+            printf("Qual o elemento que deseja inserir: ");
+            scanf("%f", &valor);
+            retorno = insere_ord(lst, valor);
+
+            if(retorno == 0)
+                printf("Erro ao inserir.\n");
+            else
+                printf("Elemento inserido.\n");
+            break;
+
+        case 3:
+            printf("Elemento que deseja remover: ");
+            scanf("%f", &valor);
+            retorno = remov(lst,valor);
+
+            break;
+
+        case 4:
+            printf("Lista de tamanho: %d\n", tamanho(lst));
+            break;
+
+        default:
+            printf("Opcao invalida!\n");
+    }
+}
+
+
+_______________________________________________________________________________
+
+tad.h
+
+typedef struct no *Lista;
+
+Lista cria_lista();
+int lista_vazia(Lista lst);
+int insere_ord(Lista lst, float elem);
+int remov(Lista lst, float elem);
+int obtem_elem(Lista lst, int pos, float *valor);
+int tamanho(Lista lst);
+int iguais(Lista lst, Lista lst2);
+void esvaziar(Lista lst);
+Lista intercala(Lista lst, Lista lst2);
+
+_______________________________________________________________________________
+
+funcao.c
+
+#include <stdio.h>
+#include <stdlib.h>
+#include "03.h"
+
+struct no{
+    float info;
+    struct no* prox;
+};
+
+/*
+cria_lista
+Entrada: nenhuma
+Processo: cria uma lista com cabeçalho e seta ela pra estado vazio
+Saida: tipo LISTA
+*/
+Lista cria_lista(){
+    //aloca o nó cabeçalho
+    Lista cabe;
+    cabe = (Lista) malloc(sizeof(struct no));
+
+    //se a lista foi alocada com sucesso, seta para o estado vazio
+    if(cabe != NULL){
+        cabe->prox = NULL;
+        cabe->info = 0;// armazenar o tamanho da lista
+    }
+
+    return cabe;
+}
+
+
+/*
+lista_vazia
+Entrada: tipo Lista
+Processo: verifica se a lista esta vazia, o que ocorre se o cabelho aponta para NULL
+Saida: 1, se vazia, 0, se nao vazia
+*/
+int lista_vazia(Lista lst){
+    if(lst->prox == NULL)
+        return 1;
+
+    return 0;
+}
+
+/*
+insere_ord
+Entrada: tipo Lista, tipo float representado um elemento
+Processo: Insere um novo elemento, ordenadamente, na lista
+Saida: 0, em fracasso, 1, em sucesso
+*/
+int insere_ord(Lista lst, float elem){
+
+    //aloca novo no
+    Lista novo;
+    novo = (Lista) malloc(sizeof(struct no));
+
+    //verifica se o no foi alocado com sucesso
+    if(novo == NULL)
+        return 0;
+
+    novo->info = elem;//inicializa o campo info com o elemento passado
+
+    //ponteiro para Lista, auxiliar
+    Lista aux = lst;
+
+    while(aux->prox != NULL && aux->prox->info > elem)
+        aux = aux->prox;//percorremos a lista ate encontrar a posicao correta
+
+    novo->prox = aux->prox;//o novo no vai apontar para o no que o elemento anterior apontava
+    aux->prox = novo;//o no anterior agora aponta para o novo no
+    lst->info++;//incrementa a qtd de elem da lista
+
+    return 1;
+}
+
+/*
+remover
+Entrada: tipo Lista, tipo float representado um elemento
+Processo: Remove um elemento da lista
+Saida: 0, em fracasso, 1, em sucesso
+*/
+int remov(Lista lst, float elem){
+    //caso a lista estiver vazia
+    if(lista_vazia(lst))
+        return 0;
+
+    Lista aux = lst;//recebe o endereco do cabecalho
+
+    //percorre a lista ate encontrar o elemento
+    while(aux->prox->info > elem)
+        aux = aux->prox;
+
+    Lista aux2 = aux->prox;//armazena o endereco do no a ser desalocado
+    aux->prox = aux2->prox;//fazemos o no anterior apontar para o posterior
+    free(aux2);
+
+    lst->info--;
+
+    return 1;
+}
+
+/*
+obtem_elemento
+Entrada: tipo Lista, inteiro representando posicao a ser retornada, endereco para float onde o valor sera armazenado
+Processo: realiza a consulta de um elemento na lista
+Saida: 0, em fracasso, 1, em sucesso
+*/
+int obtem_elem(Lista lst, int pos, float *valor){
+
+    //se a lista estiver vazia
+    //ou se pos for menor que 1 ou maior que o tamanho
+    if(lista_vazia(lst) || pos < 1 || pos > lst->info)
+        return 0;
+
+    lst = lst->prox;//fazemos com que lst aponte para o primerio elemento
+
+    int i = 1;
+    while(i < pos){
+        lst = lst->prox;
+        i++;
+        //percorre a lista at� que lst aponte para o elemento que estamos querendo
+    }
+
+    *valor = lst->info;
+    return 1;
+}
+
+/*
+tamanho
+Entrada: tipo Lista
+Processo: consulta a quantidade de elementos da lista
+Saida: quantidade de elementos da lista
+*/
+int tamanho(Lista lst){
+    return lst->info;
+}
+
+/*
+iguais
+Entrada: dois tipo Lista
+Processo: verifica se as duas listas recebidas sao iguais
+Saida: 0, se nao, 1, se sim
+*/
+int iguais(Lista lst, Lista lst2){
+
+    //se as duas forem vazias, iguais
+    //senao, se apenas uma for vazia, diferentes
+    //se os tamanhos forem diferentes, diferentes
+    if(lista_vazia(lst) == 1 && lista_vazia(lst2) == 1)
+        return 1;
+    else if(lista_vazia(lst) == 1 || lista_vazia(lst2) == 1)
+        return 0;
+    else if (tamanho(lst) != tamanho(lst2))
+        return 0;
+
+    //garantido que o tamanho eh igual, logo precisamos verificar por NULL em apenas uma lista
+    while(lst->prox != NULL){
+        if(lst->prox->info != lst2->prox->info)
+            return 0;//se encontrarmos um valor diferente
+
+        lst = lst->prox;
+        lst2 = lst2->prox;
+    }
+
+    return 1;
+}
+
+/*
+esvaziar
+Entrada: tipo Lista
+Processo: esvazia uma lista
+Saida: nada
+*/
+void esvaziar(Lista lst){
+    float valor;
+
+    if(lista_vazia(lst) == 1)
+        return;
+
+    int i;
+    for(i = 0; i < tamanho(lst); i++){
+        obtem_elem(lst,1,&valor);
+        remov(lst,valor);
+    }
+
+    lst->info = 0;
+    lst->prox = NULL;
+    //realizamos um processo sequencial de remocao do primeiro elemento da lista
+}
+
+Lista intercala(Lista lst, Lista lst2){
+    int retorno;
+
+    if(lista_vazia(lst) == 1)
+        return lst2;
+    else if(lista_vazia(lst2) == 1)
+        return lst;
+    //caso uma das lista esteja vazia, a intercalacao eh simplesmente a outra, o caso de ambas vazias entra nessa funcao
+
+    Lista lst3 = cria_lista();
+    if(lst3 == NULL)
+        return NULL;
+
+    while(lst->prox != NULL || lst2->prox != NULL){
+
+        if(lst->prox != NULL){
+            retorno = insere_ord(lst3,lst->prox->info);
+            if(!retorno)
+                return NULL;
+            lst = lst->prox;
+        }
+
+        if(lst2->prox != NULL){
+            retorno = insere_ord(lst3,lst2->prox->info);
+            if(!retorno)
+                return NULL;
+            lst2 = lst2->prox;
+        }
+    }
+
+    return lst3;
+}
+

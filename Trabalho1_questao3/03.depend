@@ -1,0 +1,39 @@
+# depslib dependency file v1.0
+1644171013 source:c:\users\renat\videos\ensino remoto ufu\2022\2022-1\aed1\trabalho1\03\main.c
+	<stdio.h>
+	<stdlib.h>
+	"03.h"
+
+1643684416 c:\users\renat\videos\ensino remoto ufu\2022\2022-1\aed1\trabalho1\03\03.h
+
+1644174264 source:c:\users\renat\videos\ensino remoto ufu\2022\2022-1\aed1\trabalho1\03\03.c
+	<stdio.h>
+	<stdlib.h>
+	"03.h"
+
+1644171013 source:c:\users\renat\videos\ensino remoto ufu\2022\2022-1\aed1\trabalho1\3\main.c
+	<stdio.h>
+	<stdlib.h>
+	"03.h"
+
+1643684416 c:\users\renat\videos\ensino remoto ufu\2022\2022-1\aed1\trabalho1\3\03.h
+
+1644259001 source:c:\users\renat\videos\ensino remoto ufu\2022\2022-1\aed1\trabalho1\3(arrumando_intercala)\03.c
+	<stdio.h>
+	<stdlib.h>
+	"03.h"
+
+1643684416 c:\users\renat\videos\ensino remoto ufu\2022\2022-1\aed1\trabalho1\3(arrumando_intercala)\03.h
+
+1644259002 source:c:\users\pc\desktop\facul\aed1\zips\3(arrumando_intercala)\03.c
+	<stdio.h>
+	<stdlib.h>
+	"03.h"
+
+1643684418 c:\users\pc\desktop\facul\aed1\zips\3(arrumando_intercala)\03.h
+
+1644343632 source:c:\users\pc\desktop\facul\aed1\zips\3(arrumando_intercala)\main.c
+	<stdio.h>
+	<stdlib.h>
+	"03.h"
+

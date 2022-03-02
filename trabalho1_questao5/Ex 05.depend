@@ -1,0 +1,13 @@
+# depslib dependency file v1.0
+1644188649 source:c:\users\leonardo\desktop\estudo\aed1\2021-1\trabalho 1\ex 05\ex 05\user.c
+	<stdio.h>
+	<stdlib.h>
+	"lista.h"
+
+1644188756 source:c:\users\leonardo\desktop\estudo\aed1\2021-1\trabalho 1\ex 05\ex 05\lista.c
+	<stdio.h>
+	<stdlib.h>
+	"lista.h"
+
+1644186750 c:\users\leonardo\desktop\estudo\aed1\2021-1\trabalho 1\ex 05\ex 05\lista.h
+

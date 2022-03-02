@@ -1,0 +1,13 @@
+# depslib dependency file v1.0
+1643909416 source:c:\users\pc\desktop\facul\aed1\trabalho_questao2\main.c
+	<stdio.h>
+	<stdlib.h>
+	"Lista.h"
+
+1643908268 c:\users\pc\desktop\facul\aed1\trabalho_questao2\lista.h
+
+1644181178 source:c:\users\pc\desktop\facul\aed1\trabalho_questao2\lista.c
+	<stdlib.h>
+	"Lista.h"
+	<string.h>
+
