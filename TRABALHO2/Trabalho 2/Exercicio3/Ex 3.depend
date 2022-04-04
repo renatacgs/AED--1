@@ -1,0 +1,17 @@
+# depslib dependency file v1.0
+1647721093 source:c:\users\leonardo\desktop\estudo\aed1\2021-1\trabalho 2\ex 3\fila.c
+	<stdio.h>
+	<stdlib.h>
+	<time.h>
+	"fila.h"
+	<string.h>
+
+1647800545 source:c:\users\leonardo\desktop\estudo\aed1\2021-1\trabalho 2\ex 3\user.c
+	<stdio.h>
+	<stdlib.h>
+	<time.h>
+	"fila.h"
+	<string.h>
+
+1647391941 c:\users\leonardo\desktop\estudo\aed1\2021-1\trabalho 2\ex 3\fila.h
+

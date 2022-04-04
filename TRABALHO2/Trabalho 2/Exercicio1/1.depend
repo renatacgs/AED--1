@@ -1,0 +1,25 @@
+# depslib dependency file v1.0
+1646421298 source:c:\users\renat\videos\ensino remoto ufu\2022\2022-1\aed1\trabalho2\1\main.c
+	<stdio.h>
+	<stdlib.h>
+	"1.h"
+
+1646614490 c:\users\renat\videos\ensino remoto ufu\2022\2022-1\aed1\trabalho2\1\1.h
+
+1646614487 source:c:\users\renat\videos\ensino remoto ufu\2022\2022-1\aed1\trabalho2\1\1.c
+	<stdio.h>
+	<stdlib.h>
+	"1.h"
+
+1647802993 source:c:\users\leonardo\desktop\estudo\aed1\2021-1\trabalho 2\ex 1\1.c
+	<stdio.h>
+	<stdlib.h>
+	"1.h"
+
+1647802942 c:\users\leonardo\desktop\estudo\aed1\2021-1\trabalho 2\ex 1\1.h
+
+1647291155 source:c:\users\leonardo\desktop\estudo\aed1\2021-1\trabalho 2\ex 1\main.c
+	<stdio.h>
+	<stdlib.h>
+	"1.h"
+

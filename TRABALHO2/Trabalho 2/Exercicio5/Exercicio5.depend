@@ -1,0 +1,12 @@
+# depslib dependency file v1.0
+1647779058 source:c:\users\pc\desktop\facul\aed1\trabalho 2\exercicio5\deque.c
+	<stdlib.h>
+	"Deque.h"
+	<string.h>
+
+1647779058 c:\users\pc\desktop\facul\aed1\trabalho 2\exercicio5\deque.h
+
+1647778966 source:c:\users\pc\desktop\facul\aed1\trabalho 2\exercicio5\main.c
+	<stdio.h>
+	"Deque.h"
+

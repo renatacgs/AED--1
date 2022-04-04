@@ -1,0 +1,31 @@
+# depslib dependency file v1.0
+1647793501 source:c:\users\pc\desktop\facul\aed1\trabalho 2\exercicio 2\main.c
+	<stdio.h>
+	<stdlib.h>
+	<math.h>
+	<string.h>
+	"Pilha.h"
+
+1647789718 c:\users\pc\desktop\facul\aed1\trabalho 2\exercicio 2\pilha.h
+
+1647789152 source:c:\users\pc\desktop\facul\aed1\trabalho 2\exercicio 2\pilha.c
+	<stdio.h>
+	<stdlib.h>
+	"Pilha.h"
+
+1647782875 source:c:\users\pc\desktop\facul\aed1\trabalho 2\exercicio 2\pilha.h
+
+1647800738 source:c:\users\pc\desktop\facul\aed1\exercicio 2\main.c
+	<stdio.h>
+	<stdlib.h>
+	<math.h>
+	<string.h>
+	"Pilha.h"
+
+1647789718 c:\users\pc\desktop\facul\aed1\exercicio 2\pilha.h
+
+1647789152 source:c:\users\pc\desktop\facul\aed1\exercicio 2\pilha.c
+	<stdio.h>
+	<stdlib.h>
+	"Pilha.h"
+
